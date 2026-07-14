@@ -1,5 +1,5 @@
 # amazon-html
-This guide provides a detailed breakdown of the adaptive interface styled after Amazon, featuring three slide-out menus. It is aimed at beginner developers who want to understand how modern navigation panels are built and how to separate HTML, CSS, and JavaScript into independent files. You can use this template as a foundation for your own themes on Cotonti CMF or other systems.
+This **[guide](https://abuyfile.com/en/usersblog/amazon-shablon-html-css-js)** provides a detailed breakdown of the adaptive interface styled after Amazon, featuring three slide-out menus. It is aimed at beginner developers who want to understand how modern navigation panels are built and how to separate HTML, CSS, and JavaScript into independent files. You can use this template as a foundation for your own themes on Cotonti CMF or other systems.
 
 ## Educational Purpose
 
