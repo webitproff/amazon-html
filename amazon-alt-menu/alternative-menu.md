@@ -1,0 +1,1 @@
+An alternative menu option. It looks acceptable for desktop and mobile, but requires duplicating the category tree in html.
