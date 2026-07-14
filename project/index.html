@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Amazon-like header – two left + one right offcanvas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ВЕРХНЯЯ СТРОКА (добавлен id для Account & Lists) -->
+  <div class="top-line">
+    <a href="/" class="logo"><span>A</span>mazon</a>
+    <div class="search-box">
+      <select><option>All</option><option>Books</option></select>
+      <select><option>All Departments</option><option>Arts & Crafts</option></select>
+      <input type="text" placeholder="Search Amazon">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="header-icons">
+      <a href="#" id="accountListsLink"><span>Hello, sign in</span><strong>Account & Lists</strong></a>
+      <a href="#"><span>Returns</span><strong>& Orders</strong></a>
+      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+    </div>
+  </div>
+
+  <!-- НИЖНЯЯ СТРОКА (навигация) -->
+  <div class="nav-line">
+    <button class="mobile-nav-toggle" id="mobileNavToggle"><i class="fas fa-bars"></i></button>
+    <button class="all-btn" id="allBtn"><i class="fas fa-bars"></i> All</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#">Today's Deals</a>
+      <a href="#">Customer Service</a>
+      <a href="#">Gift Cards</a>
+      <a href="#" id="helpSettingsLink">Help & Settings</a>
+    </div>
+  </div>
+
+  <!-- OFF-CANVAS MENU для кнопки "All" (магазин) - левое -->
+  <div class="offcanvas-overlay" id="overlay-shop"></div>
+  <div class="offcanvas-menu" id="offcanvas-shop">
+    <div class="offcanvas-header">
+      <span>Browse all categories</span>
+      <button class="offcanvas-close" id="offcanvasCloseShop"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="offcanvas-user">
+      <i class="fas fa-user-circle fa-2x"></i> Hello, sign in
+    </div>
+    <div class="offcanvas-body">
+      <!-- Главный уровень (магазин) -->
+      <div class="menu-level active" id="mainLevelShop">
+        <div class="menu-section-title">Digital Content &amp; Devices</div>
+        <a class="menu-item" href="#">Prime Video</a>
+        <a class="menu-item" href="#">Amazon Music</a>
+        <a class="menu-item" href="#">Kindle E-readers &amp; Books</a>
+        <a class="menu-item" href="#">Amazon Appstore</a>
+        <div class="menu-separator"></div>
+        <div class="menu-section-title">Shop by Department</div>
+        <div class="menu-item has-submenu" data-submenu="electronics">
+          Electronics <span class="menu-arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item has-submenu" data-submenu="computers">
+          Computers <span class="menu-arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item has-submenu" data-submenu="books">
+          Books <span class="menu-arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <div class="menu-item has-submenu" data-submenu="home">
+          Home &amp; Kitchen <span class="menu-arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <a class="menu-item" href="#">Smart Home</a>
+        <a class="menu-item" href="#">Arts &amp; Crafts</a>
+        <a class="menu-item" href="#">See all</a>
+        <div class="menu-separator"></div>
+        <div class="menu-section-title">Programs &amp; Features</div>
+        <a class="menu-item" href="#">Gift Cards</a>
+        <a class="menu-item" href="#">Amazon Live</a>
+        <a class="menu-item" href="#">International Shopping</a>
+        <a class="menu-item" href="#">See all</a>
+      </div>
+
+      <!-- Подменю Electronics -->
+      <div class="menu-level next" id="submenu-electronics">
+        <div class="menu-item back-button" data-back>
+          <i class="fas fa-arrow-left"></i> main menu
+        </div>
+        <div class="menu-section-title">Electronics</div>
+        <a class="subcategory-item" href="#">Accessories &amp; Supplies</a>
+        <a class="subcategory-item" href="#">Camera &amp; Photo</a>
+        <a class="subcategory-item" href="#">Car &amp; Vehicle Electronics</a>
+        <a class="subcategory-item" href="#">Cell Phones &amp; Accessories</a>
+        <a class="subcategory-item" href="#">Computers &amp; Accessories</a>
+        <a class="subcategory-item" href="#">GPS &amp; Navigation</a>
+        <a class="subcategory-item" href="#">Headphones</a>
+        <a class="subcategory-item" href="#">Home Audio</a>
+        <a class="subcategory-item" href="#">Office Electronics</a>
+        <a class="subcategory-item" href="#">Portable Audio &amp; Video</a>
+        <a class="subcategory-item" href="#">Security &amp; Surveillance</a>
+        <a class="subcategory-item" href="#">Television &amp; Video</a>
+        <a class="subcategory-item" href="#">Video Game Consoles &amp; Accessories</a>
+        <a class="subcategory-item" href="#">Wearable Technology</a>
+        <a class="subcategory-item" href="#">eBook Readers &amp; Accessories</a>
+      </div>
+
+      <!-- Подменю Computers -->
+      <div class="menu-level next" id="submenu-computers">
+        <div class="menu-item back-button" data-back>
+          <i class="fas fa-arrow-left"></i> main menu
+        </div>
+        <div class="menu-section-title">Computers</div>
+        <a class="subcategory-item" href="#">Computer Accessories &amp; Peripherals</a>
+        <a class="subcategory-item" href="#">Computer Components</a>
+        <a class="subcategory-item" href="#">Computers &amp; Tablets</a>
+        <a class="subcategory-item" href="#">Data Storage</a>
+        <a class="subcategory-item" href="#">External Components</a>
+        <a class="subcategory-item" href="#">Laptop Accessories</a>
+        <a class="subcategory-item" href="#">Monitors</a>
+        <a class="subcategory-item" href="#">Networking Products</a>
+        <a class="subcategory-item" href="#">Power Strips &amp; Surge Protectors</a>
+        <a class="subcategory-item" href="#">Printers</a>
+        <a class="subcategory-item" href="#">Scanners</a>
+        <a class="subcategory-item" href="#">Servers</a>
+        <a class="subcategory-item" href="#">Tablet Accessories</a>
+        <a class="subcategory-item" href="#">Warranties &amp; Services</a>
+      </div>
+
+      <!-- Подменю Books -->
+      <div class="menu-level next" id="submenu-books">
+        <div class="menu-item back-button" data-back>
+          <i class="fas fa-arrow-left"></i> main menu
+        </div>
+        <div class="menu-section-title">Books</div>
+        <a class="subcategory-item" href="#">Literature &amp; Fiction</a>
+        <a class="subcategory-item" href="#">Science Fiction &amp; Fantasy</a>
+        <a class="subcategory-item" href="#">Biography &amp; Memoir</a>
+        <a class="subcategory-item" href="#">History</a>
+        <a class="subcategory-item" href="#">Self-Help</a>
+        <a class="subcategory-item" href="#">Children's Books</a>
+        <a class="subcategory-item" href="#">Young Adult</a>
+        <a class="subcategory-item" href="#">Textbooks</a>
+      </div>
+
+      <!-- Подменю Home & Kitchen -->
+      <div class="menu-level next" id="submenu-home">
+        <div class="menu-item back-button" data-back>
+          <i class="fas fa-arrow-left"></i> main menu
+        </div>
+        <div class="menu-section-title">Home &amp; Kitchen</div>
+        <a class="subcategory-item" href="#">Kitchen &amp; Dining</a>
+        <a class="subcategory-item" href="#">Bedding</a>
+        <a class="subcategory-item" href="#">Bath</a>
+        <a class="subcategory-item" href="#">Furniture</a>
+        <a class="subcategory-item" href="#">Home Décor</a>
+        <a class="subcategory-item" href="#">Wall Art</a>
+        <a class="subcategory-item" href="#">Lighting &amp; Ceiling Fans</a>
+        <a class="subcategory-item" href="#">Seasonal Décor</a>
+        <a class="subcategory-item" href="#">Storage &amp; Organization</a>
+        <a class="subcategory-item" href="#">Cleaning Supplies</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFF-CANVAS MENU для "Help & Settings" - левое -->
+  <div class="offcanvas-overlay" id="overlay-help"></div>
+  <div class="offcanvas-menu" id="offcanvas-help">
+    <div class="offcanvas-header">
+      <span>Help &amp; Settings</span>
+      <button class="offcanvas-close" id="offcanvasCloseHelp"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="offcanvas-user">
+      <i class="fas fa-user-circle fa-2x"></i> Hello, sign in
+    </div>
+    <div class="offcanvas-body">
+      <!-- Главный уровень (Help & Settings) -->
+      <div class="menu-level active" id="mainLevelHelp">
+        <div class="menu-section-title">Help &amp; Settings</div>
+        <a class="menu-item" href="#">Your Account</a>
+        <a class="menu-item" href="#">English</a>
+        <div class="menu-item has-submenu" data-submenu="seasons">
+          Времена года <span class="menu-arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <a class="menu-item" href="#">United States</a>
+        <div class="menu-item has-submenu" data-submenu="days">
+          Дни недели <span class="menu-arrow"><i class="fas fa-chevron-right"></i></span>
+        </div>
+        <a class="menu-item" href="#">Customer Service</a>
+        <a class="menu-item" href="#">Sign in</a>
+      </div>
+
+      <!-- Подменю Времена года -->
+      <div class="menu-level next" id="submenu-help-seasons">
+        <div class="menu-item back-button" data-back>
+          <i class="fas fa-arrow-left"></i> main menu
+        </div>
+        <div class="menu-section-title">Времена года</div>
+        <a class="subcategory-item" href="#">Весна</a>
+        <a class="subcategory-item" href="#">Лето</a>
+        <a class="subcategory-item" href="#">Зима</a>
+      </div>
+      <!-- Подменю Дни недели -->
+      <div class="menu-level next" id="submenu-help-days">
+        <div class="menu-item back-button" data-back>
+          <i class="fas fa-arrow-left"></i> main menu
+        </div>
+        <div class="menu-section-title">Дни недели</div>
+        <a class="subcategory-item" href="#">Понедельник</a>
+        <a class="subcategory-item" href="#">Вторник</a>
+        <a class="subcategory-item" href="#">Среда</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFF-CANVAS MENU для "Account & Lists" - правое -->
+  <div class="offcanvas-overlay" id="overlay-account"></div>
+  <div class="offcanvas-menu-right" id="offcanvas-account">
+    <div class="offcanvas-header">
+      <span>Account &amp; Lists</span>
+      <button class="offcanvas-close" id="offcanvasCloseAccount"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="offcanvas-body" style="overflow-y: auto;">
+      <div style="padding: 20px;">
+        <a href="#" class="signin-btn" style="display:block; text-align:center; background:#ffd814; color:#111; padding:10px; border-radius:8px; font-weight:600; margin-bottom:20px;">Sign in</a>
+        <div class="menu-section-title">Your Account</div>
+        <ul class="account-menu-list">
+          <li><a href="#">Your Orders</a></li>
+          <li><a href="#">Your Wish List</a></li>
+          <li><a href="#">Your Recommendations</a></li>
+          <li><a href="#">Your Prime Membership</a></li>
+          <li><a href="#">Your Prime Video</a></li>
+          <li><a href="#">Your Subscribe & Save Items</a></li>
+          <li><a href="#">Memberships & Subscriptions</a></li>
+          <li><a href="#">Your Seller Account</a></li>
+          <li><a href="#">Manage Your Content and Devices</a></li>
+          <li><a href="#">Your Free Amazon Business Account</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <div class="container mt-5">
+    <h1>Main Content</h1>
+    <p>Scroll down to see footer.</p>
+    <div style="height: 400px;"></div>
+  </div>
+
+  <!-- ФУТЕР -->
+  <footer class="footer-amazon">
+    <div class="footer-col">
+      <h5>Get to Know Us</h5>
+      <a href="#">Careers</a><a href="#">Blog</a><a href="#">About Amazon</a>
+    </div>
+    <div class="footer-col">
+      <h5>Make Money with Us</h5>
+      <a href="#">Sell products</a><a href="#">Become an Affiliate</a>
+    </div>
+    <div class="footer-col">
+      <h5>Amazon Payment</h5>
+      <a href="#">Amazon Credit Cards</a><a href="#">Gift Cards</a>
+    </div>
+    <div class="footer-col">
+      <h5>Let Us Help You</h5>
+      <a href="#">Your Account</a><a href="#">Returns Centre</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
